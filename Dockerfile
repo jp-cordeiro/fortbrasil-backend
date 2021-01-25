@@ -4,11 +4,9 @@ WORKDIR /src
 COPY package*.json ./
 COPY yarn* ./
 COPY .env* ./
+COPY ormconfig.js ./
 
-COPY start.sh /
-
-RUN chmod +x /start.sh
 RUN yarn install
 
 COPY . .
-CMD ["/start.sh"]
+CMD ["yarn","dev"]

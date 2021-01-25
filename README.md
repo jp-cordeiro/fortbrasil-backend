@@ -13,6 +13,8 @@ Projeto para teste prático: Construção de um sistema de gerenciamento de esta
 
 ```bash
 
+Comentar a linha 3 no arquivo ormconfig.js
+
 # Instalar dependências
 $ yarn install
 

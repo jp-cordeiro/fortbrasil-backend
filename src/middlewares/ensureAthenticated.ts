@@ -24,11 +24,7 @@ export default function ensureAthenticated(
   const [, token] = authHeader.split(' ');
 
   try {
-    const decoded = verify(token, authConfig.jwt.secret);
-    const { sub } = decoded as TokenPayload;
-    request.user = {
-      id: sub,
-    };
+    verify(token, authConfig.jwt.secret);
     next();
   } catch (error) {
     throw new AppError('Token JWT mal formado.', 401);

@@ -38,4 +38,7 @@ $ cp .env.example .env
 
 # Subir a aplicação
 $ docker-compose up -d
+
+# Caso seja a primeira vez subindo a aplicação, executar este comando para rodar as migrations e os seeders no container 'fortbrasil_api'
+$ docker exec fortbrasil_api yarn typeorm:run && docker exec fortbrasil_api yarn seed:run
 ```

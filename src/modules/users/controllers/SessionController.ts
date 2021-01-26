@@ -7,11 +7,11 @@ export default {
 
     const authenticateUser = new AthenticateUserService();
 
-    const token = await authenticateUser.execute({
+    const authencation = await authenticateUser.execute({
       email,
       password,
     });
 
-    return response.status(201).json({token});
+    return response.status(201).json(authencation);
   },
 };

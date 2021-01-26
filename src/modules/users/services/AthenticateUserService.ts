@@ -5,13 +5,23 @@ import User from '../model/User';
 import authConfig from '../../../config/auth';
 import AppError from '../../../errors/AppError';
 
-interface Request {
+interface IRequest {
   email: string;
   password: string;
 }
 
+interface IResponse {
+  user: IUserResponse;
+  token: string;
+}
+
+interface IUserResponse {
+  name: string;
+  email: string;
+}
+
 export default class AtheticateUserService {
-  public async execute({ email, password }: Request): Promise<string> {
+  public async execute({ email, password }: IRequest): Promise<IResponse> {
     const usersRepository = getRepository(User);
     const user = await usersRepository.findOne({
       where: { email },
@@ -34,6 +44,9 @@ export default class AtheticateUserService {
       expiresIn,
     });
 
-    return token;
+    const { name } = user;
+    const userResponse: IUserResponse = { name, email };
+
+    return { user: userResponse, token };
   }
 }

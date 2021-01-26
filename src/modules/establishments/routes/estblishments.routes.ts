@@ -12,7 +12,7 @@ const validateParamsRequest = {
 const validateEstablishmentRequest = {
   [Segments.BODY]: {
     name: Joi.string().required(),
-    description: Joi.string(),
+    description: Joi.string().allow(null, ''),
     latitude: Joi.number().required(),
     longitude: Joi.number().required(),
   },

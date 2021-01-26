@@ -1,6 +1,6 @@
 ## Sobre
 
-Projeto para teste prático: Construção de um sistema de gerenciamento de estabelecimentos.
+Projeto para teste prático: Construção de um sistema de gerenciamento de estabelecimentos - Backend.
 
 ## Como usar
 

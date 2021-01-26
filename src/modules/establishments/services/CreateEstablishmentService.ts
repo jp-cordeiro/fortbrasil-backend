@@ -24,7 +24,7 @@ class CreateEstablishmentService {
     );
 
     if (establishmentSameName) {
-      throw new AppError(`Já existe um extabelicimento com o mesmo nome`);
+      throw new AppError(`Já existe um estabelicimento com o mesmo nome`);
     }
 
     const establishmentSameCoord = await establishmentsRepository.findByCoord(
@@ -34,7 +34,7 @@ class CreateEstablishmentService {
 
     if (establishmentSameCoord) {
       throw new AppError(
-        `Já existe um extabelicimento(name: ${establishmentSameCoord.name}) com as mesmas coordenadas`,
+        `Já existe um estabelicimento(name: ${establishmentSameCoord.name}) com as mesmas coordenadas`,
       );
     }
 

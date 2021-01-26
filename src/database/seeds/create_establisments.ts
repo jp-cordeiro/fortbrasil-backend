@@ -2,8 +2,8 @@ const EstablishmentsSedds = [
   {
     name: 'Estabelecimento 1',
     description: 'Supermercado 1',
-    latitude: -3.7311875,
-    longitude: -38.5443241,
+    latitude: -3.8301781,
+    longitude: -38.4875418,
   },
   {
     name: 'Estabelecimento 2',
